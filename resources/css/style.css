@@ -103,6 +103,7 @@ h2:after {
 
 .long-feat {
 	text-align: justify;
+	text-align-last: center;
 	line-height: 145%;
 	width:70%;
 	margin-left: 15%;

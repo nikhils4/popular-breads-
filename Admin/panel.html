@@ -358,7 +358,7 @@
 						})
 						.then(data => {
 							if (result.value) {
-								event.target.parentNode.parentNode.remove();
+								getProductsList();
 								Swal.fire(
 									'Deleted!',
 									'Your product has been deleted.',

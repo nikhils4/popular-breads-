@@ -24,7 +24,7 @@
 
 		label::after {
 			content: '*';
-		} 
+		}
 	</style>
 </head>
 
@@ -32,8 +32,9 @@
 	<header>
 		<nav>
 			<div class="row">
-				<img src="resources/images/logo-white.png" alt="PopularBread logo"  class="logo-black">
-				<img src="resources/images/logo.png" alt="PopularBread logo" style="height: 50px; width: 120px; margin-top: 30px;" class="logo">
+				<img src="resources/images/logo-white.png" alt="PopularBread logo" class="logo-black">
+				<img src="resources/images/logo.png" alt="PopularBread logo"
+					style="height: 50px; width: 120px; margin-top: 30px;" class="logo">
 				<ul class="main-nav js--main-nav">
 					<li><a href="#cities">Our cities</a></li>
 					<li><a href="productNew.html">Our products</a></li>
@@ -57,28 +58,28 @@
 		</div>
 	</section>
 	<section class="section-meals">
-			<ul class="meals-show clearfix">
-				<li>
-					<figure class="meal-photo">
-						<img src="resources/images/special/one.jpeg" alt="First image" style="height: 250px;">
-					</figure>
-				</li>
-				<li>
-					<figure class="meal-photo">
-						<img src="resources/images/special/two.jpeg" alt="Second image" style="height: 250px;">
-					</figure>
-				</li>
-				<li>
-					<figure class="meal-photo">
-						<img src="resources/images/special/three.jpeg" alt="Third image" style="height: 250px;">
-					</figure>
-				</li>
-				<li>
-					<figure class="meal-photo">
-						<img src="resources/images/special/four.jpeg" alt="Fourth image" style="height: 250px;">
-					</figure>
-				</li>
-			</ul>
+		<ul class="meals-show clearfix">
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/images/special/one.jpeg" alt="First image" style="height: 250px;">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/images/special/two.jpeg" alt="Second image" style="height: 250px;">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/images/special/three.jpeg" alt="Third image" style="height: 250px;">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/images/special/four.jpeg" alt="Fourth image" style="height: 250px;">
+				</figure>
+			</li>
+		</ul>
 	</section>
 	<section>
 		<div class="row" id="explore">
@@ -118,25 +119,19 @@
 		<div class="row">
 			<h2>Our collaborators</h2>
 		</div>
-		<div class="row" style="text-align: center; display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; padding-top: 50px">
+		<div class="row"
+			style="text-align: center; display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; padding-top: 50px">
+			<img src="resources/images/logo/bigb.jpg" alt="Second image" style="height: 100px; margin: 20px">
 
-		
-		
+			<img src="resources/images/logo/dmart.png" alt="First image" style="height: 80px;  margin: 20px">
 
-							<img src="resources/images/logo/bigb.jpg" alt="Second image" style="height: 100px; margin: 20px">
+			<img src="resources/images/logo/swiggy.png" alt="Third image" style="height: 100px;  margin: 20px">
 
-							<img src="resources/images/logo/dmart.png" alt="First image" style="height: 80px;  margin: 20px">
+			<img src="resources/images/logo/zomato.png" alt="Second image" style="height: 100px;  margin: 20px">
 
-							<img src="resources/images/logo/swiggy.png" alt="Third image" style="height: 100px;  margin: 20px">
+			<img src="resources/images/logo/more.png" alt="First image" style="height: 80px;  margin: 20px">
 
-							<img src="resources/images/logo/zomato.png" alt="Second image" style="height: 100px;  margin: 20px">
-
-							<img src="resources/images/logo/more.png" alt="First image" style="height: 80px;  margin: 20px">
-
-							<img src="resources/images/logo/ghartak.png" alt="Third image" style="height: 100px;  margin: 20px">
-
-
-
+			<img src="resources/images/logo/ghartak.png" alt="Third image" style="height: 100px;  margin: 20px">
 		</div>
 	</section>
 	<section>
@@ -319,13 +314,13 @@
 
 
 		function validateContactUs(obj) {
-			if(nameVerify(obj.name) && phoneVerify(obj.contact_number) && emailVerify(obj.email_id) && verify(obj.description) && verify(obj.address)){
+			if (nameVerify(obj.name) && phoneVerify(obj.contact_number) && emailVerify(obj.email_id) && verify(obj.description) && verify(obj.address)) {
 				return true;
 			}
 			return false;
 		}
 		function validateFeedback(obj) {
-			if(nameVerify(obj.name) && phoneVerify(obj.contact) && emailVerify(obj.email) && verify(obj.product) && verify(obj.description)){
+			if (nameVerify(obj.name) && phoneVerify(obj.contact) && emailVerify(obj.email) && verify(obj.product) && verify(obj.description)) {
 				return true;
 			}
 			return false;
@@ -340,48 +335,50 @@
 				let address = document.getElementById('location').value;
 				let description = document.getElementById('comment').value;
 				let data = { name, contact_number, email_id, description, address }
-				if(validateContactUs(data)){
+				if (validateContactUs(data)) {
 					// fetch call
-				fetch('https://popularbreadapi.herokuapp.com/enquiry', {
-				method: "POST",
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(data)
-			})
-				.then(res => {
-						document.getElementById('name').value = "";
-						document.getElementById('email').value = "";
-						document.getElementById('phone').value = "";
-						document.getElementById('location').value = "";
-						document.getElementById('comment').value = "";
-					return res.json();
-				})
-				.then(data => {
-					if (data.name === undefined) {
-						document.getElementById('submit').innerHTML = 'Submit'
-						Swal.fire(
-							'Oopppsss..',
-							'There was some technical glitch!',
-							'error'
-						)
-					} else {
-						document.getElementById('submit').innerHTML = 'Submit'
-						Swal.fire(
-							'Added',
-							'Successfully submitted',
-							'success'
-						)
-					}
-				})
-				.catch(err => {
-					console.log(err)
-					Swal.fire(
-						'Oopppsss..',
-						'There was some internal error!',
-						'error'
-					)
-				})
+					document.getElementById('submit').innerHTML = "Submitting..."
+					fetch('https://popularbreadapi.herokuapp.com/enquiry', {
+						method: "POST",
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(data)
+					})
+						.then(res => {
+							document.getElementById('name').value = "";
+							document.getElementById('email').value = "";
+							document.getElementById('phone').value = "";
+							document.getElementById('location').value = "";
+							document.getElementById('comment').value = "";
+							document.getElementById('submit').innerHTML = "Submit"
+							return res.json();
+						})
+						.then(data => {
+							if (data.name === undefined) {
+								document.getElementById('submit').innerHTML = 'Submit'
+								Swal.fire(
+									'Oopppsss..',
+									'There was some technical glitch!',
+									'error'
+								)
+							} else {
+								document.getElementById('submit').innerHTML = 'Submit'
+								Swal.fire(
+									'Added',
+									'Successfully submitted',
+									'success'
+								)
+							}
+						})
+						.catch(err => {
+							console.log(err)
+							Swal.fire(
+								'Oopppsss..',
+								'There was some internal error!',
+								'error'
+							)
+						})
 				} else {
 					Swal.fire(
 						'Oopppsss..',
@@ -393,58 +390,58 @@
 
 			document.getElementById('submitFB').addEventListener('click', (e) => {
 				e.preventDefault();
-			
-
 				let name = document.getElementById('nameFB').value;
 				let email = document.getElementById('emailFB').value;
 				let contact = document.getElementById('phoneFB').value;
 				let product = document.getElementById('productFB').value;
 				let description = document.getElementById('commentFB').value;
-				let data = 	{name,contact,email,product,description}
+				let data = { name, contact, email, product, description }
 				console.log(data)
-				if(validateFeedback(data)){
+				if (validateFeedback(data)) {
 					// fetch call
-				fetch('https://popularbreadapi.herokuapp.com/feedback', {
-				method: "POST",
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(data)
-			})
-				.then(res => {
-					document.getElementById('nameFB').value = "";
-					document.getElementById('emailFB').value = "";
-					document.getElementById('phoneFB').value = "";
-					document.getElementById('productFB').value = "";
-					document.getElementById('commentFB').value = "";
-					return res.json();
-				})
-				.then(data => {
-					if (data.name === undefined) {
-						document.getElementById('submit').innerHTML = 'Submit'
-						Swal.fire(
-							'Oopppsss..',
-							'There was some technical glitch!',
-							'error'
-						)
-					} else {
-						document.getElementById('submit').innerHTML = 'Submit'
-						Swal.fire(
-							'Added',
-							'Successfully submitted',
-							'success'
-						)
-					}
-				})
-				.catch(err => {
-					console.log(err)
-					Swal.fire(
-						'Oopppsss..',
-						'There was some internal error!',
-						'error'
-					)
+					document.getElementById('submitFB').innerHTML = "Submitting..."
+					fetch('https://popularbreadapi.herokuapp.com/feedback', {
+						method: "POST",
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify(data)
+					})
+						.then(res => {
+							document.getElementById('submitFB').innerHTML = "Submit"
+							document.getElementById('nameFB').value = "";
+							document.getElementById('emailFB').value = "";
+							document.getElementById('phoneFB').value = "";
+							document.getElementById('productFB').value = "";
+							document.getElementById('commentFB').value = "";
+							return res.json();
+						})
+						.then(data => {
+							if (data.name === undefined) {
+								document.getElementById('submit').innerHTML = 'Submit'
+								Swal.fire(
+									'Oopppsss..',
+									'There was some technical glitch!',
+									'error'
+								)
+							} else {
+								document.getElementById('submit').innerHTML = 'Submit'
+								Swal.fire(
+									'Added',
+									'Successfully submitted',
+									'success'
+								)
+							}
+						})
+						.catch(err => {
+							console.log(err)
+							Swal.fire(
+								'Oopppsss..',
+								'There was some internal error!',
+								'error'
+							)
 
-				})
+						})
 				} else {
 					Swal.fire(
 						'Oopppsss..',

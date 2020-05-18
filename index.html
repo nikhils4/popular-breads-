@@ -25,6 +25,29 @@
 		label::after {
 			content: '*';
 		}
+
+		footer{
+			padding: 25px
+		}
+
+		@media (max-width: 700px) {
+			.collab-img {
+				width: 40%;
+			}
+			.spl-img{
+					width: 50%;
+			}
+		}
+
+		@media (min-width: 700px) {
+			.collab-img {
+				height: 100px;
+			}
+			.spl-img{
+					width: 25%;
+			}
+		}
+
 	</style>
 </head>
 
@@ -58,28 +81,13 @@
 		</div>
 	</section>
 	<section class="section-meals">
-		<ul class="meals-show clearfix">
-			<li>
-				<figure class="meal-photo">
-					<img src="resources/images/special/one.jpeg" alt="First image" style="height: 250px;">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="resources/images/special/two.jpeg" alt="Second image" style="height: 250px;">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="resources/images/special/three.jpeg" alt="Third image" style="height: 250px;">
-				</figure>
-			</li>
-			<li>
-				<figure class="meal-photo">
-					<img src="resources/images/special/four.jpeg" alt="Fourth image" style="height: 250px;">
-				</figure>
-			</li>
-		</ul>
+		<div class="row"
+			style="text-align: center; display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; padding-top: 50px">
+			<img src="resources/images/special/one.jpeg" class="spl-img" alt="First image">
+			<img src="resources/images/special/two.jpeg" class="spl-img" alt="Second image">
+			<img src="resources/images/special/three.jpeg" class="spl-img" alt="Third image">
+			<img src="resources/images/special/four.jpeg" class="spl-img" alt="Fourth image">
+		</div>
 	</section>
 	<section>
 		<div class="row" id="explore">
@@ -119,19 +127,15 @@
 		<div class="row">
 			<h2>Our collaborators</h2>
 		</div>
+
 		<div class="row"
 			style="text-align: center; display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; padding-top: 50px">
 			<img src="resources/images/logo/bigb.jpg" alt="Second image" style="height: 100px; margin: 20px">
-
 			<img src="resources/images/logo/dmart.png" alt="First image" style="height: 80px;  margin: 20px">
-
-			<img src="resources/images/logo/swiggy.png" alt="Third image" style="height: 100px;  margin: 20px">
-
-			<img src="resources/images/logo/zomato.png" alt="Second image" style="height: 100px;  margin: 20px">
-
-			<img src="resources/images/logo/more.png" alt="First image" style="height: 80px;  margin: 20px">
-
 			<img src="resources/images/logo/ghartak.png" alt="Third image" style="height: 100px;  margin: 20px">
+			<img src="resources/images/logo/zomato.png" alt="Second image" style="height: 100px;  margin: 20px">
+			<img src="resources/images/logo/more.png" class="collab-img" alt="First image" style="margin: 20px">
+			<img src="resources/images/logo/swiggy.png" alt="Third image" style="height: 100px;  margin: 20px">
 		</div>
 	</section>
 	<section>
@@ -355,7 +359,7 @@
 							return res.json();
 						})
 						.then(data => {
-							if (data.name === undefined) {
+							if (data.msg === undefined) {
 								document.getElementById('submit').innerHTML = 'Submit'
 								Swal.fire(
 									'Oopppsss..',
@@ -365,8 +369,8 @@
 							} else {
 								document.getElementById('submit').innerHTML = 'Submit'
 								Swal.fire(
-									'Added',
-									'Successfully submitted',
+									'Submitted',
+									'Successfully submitted the details',
 									'success'
 								)
 							}
@@ -398,7 +402,6 @@
 				let data = { name, contact, email, product, description }
 				console.log(data)
 				if (validateFeedback(data)) {
-					// fetch call
 					document.getElementById('submitFB').innerHTML = "Submitting..."
 					fetch('https://popularbreadapi.herokuapp.com/feedback', {
 						method: "POST",
@@ -417,7 +420,7 @@
 							return res.json();
 						})
 						.then(data => {
-							if (data.name === undefined) {
+							if (data.msg === undefined) {
 								document.getElementById('submit').innerHTML = 'Submit'
 								Swal.fire(
 									'Oopppsss..',
@@ -427,8 +430,8 @@
 							} else {
 								document.getElementById('submit').innerHTML = 'Submit'
 								Swal.fire(
-									'Added',
-									'Successfully submitted',
+									'Submitted',
+									'Successfully submitted the details',
 									'success'
 								)
 							}

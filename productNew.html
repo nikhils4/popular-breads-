@@ -6,112 +6,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="./resources/css/products.css">
-		<link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./resources/css/products.css">
+	<link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
 
 	<title>Products</title>
 	<style>
 		footer {
-    background-color: #bab2b5 /*rgb(42, 30, 19)*/;
-    padding: 50px;
-}
-
-footer-nav {
-    list-style: none;
-    float: left;
-    font-size: 20%;
-}
-
-.social-link {
-    list-style: none;
-    float: right;
-}
-
-.footer-nav li a {
-    font-size: 65%;
-}
-
-.footer-nav li, .social-link li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.social-link li a {
-    font-size: 80%;
-}
-
-.footer-nav li:last-child, .social-link li:last-child {
-    margin-right: 0;
-}
-
-.footer-nav li a:link, .footer-nav li a:visited {
-    text-decoration: none;
-    color: #123c695d /*rgba(247, 214, 184, 0.41)*/;
-    -webkit-transition: color 0.5s;
-    transition: color 0.5s;
-}
-
-.footer-nav li a:hover, .footer-nav li a:active {
-    text-decoration: none;
-    color: #123c69c2 /*rgba(237, 166, 102, 0.81)*/;
-}
-
-footer p {
-    color: #123c69e8 /*rgba(129, 99, 72, 0.95)*/;
-    text-align: center;
-    font-size: 60%;
-    margin-top: 30px;
-}
-
-.footer-nav li a:hover, .footer-nav li a:active {
-    text-decoration: none;
-    color: #123c69c2 /*rgba(237, 166, 102, 0.81)*/;
-}
-
-.ion-logo-facebook, .t2, .ion-logo-instagram, .ion-logo-snapchat, .ion-logo-googleplus, .ion-logo-linkedin, .ion-logo-whatsapp, .ion-logo-youtube {
-    text-decoration: none;
-    color: #123c695d /*rgba(247, 214, 184, 0.41)*/;
-    -webkit-transition: color 0.2s;
-    transition: color 0.2s;
-}
-
-.ion-logo-facebook:hover, .ion-logo-facebook:active {
-    color: #3b5998;
-}
-
-.ion-logo-googleplus:hover, .ion-logo-googleplus:active {
-    color: #dc4e41;
-}
-
-.ion-logo-instagram:hover, .ion-logo-instagram:active {
-    color: #517fa4;
-}
-
-.ion-logo-linkedin:hover, .ion-logo-linkedin:active {
-    color: #0077b5;
-}
-
-.ion-logo-youtube:hover, .ion-logo-youtube:active {
-    color: #b31217;
-}
-
-.t2:hover, .t2:active {
-    color: #55acee;
-}
-
-.ion-logo-snapchat:hover, .ion-logo-snapchat:active {
-    color: #efff29;
-}
-
-.ion-logo-whatsapp:hover, .ion-logo-whatsapp:active {
-    color: #25d366;
-}
-
-footer{
-	display: none;
-}
-
-
+			display: none;
+		}
 	</style>
 </head>
 
@@ -119,9 +21,11 @@ footer{
 
 	<header>
 
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0 2%; margin : 0; background-color: white;">
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+			style="padding: 0 2%; margin : 0; background-color: white;">
 			<div>
-			<a href="./index.html"><img src="resources/images/logo.png" style="height: 50px; width: 120px;" alt="Omnifood logo" class="logo"></a>
+				<a href="./index.html"><img src="resources/images/logo.png" style="height: 50px; width: 120px;"
+						alt="Omnifood logo" class="logo"></a>
 			</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,36 +53,28 @@ footer{
 		</div>
 		<div class="row" id="products-list" style="text-align: center;">
 
-			<img src="./resources/images/loader.gif" id="loader" style="margin: auto auto">
+			<img src="./resources/images/loader.gif" id="loader" style="margin: auto auto; width: 350px;">
 		</div>
 	</div>
 
-
-	<footer>
+	<footer style="background-color: #bab2b5; padding: 25px 25px 10px 25px; opacity: 0.8;">
 		<div class="row">
-			<div class="col span-1-of-2">
-				<ul class="social-link">
-					<li>
-						<a href="https://m.facebook.com/PopularBreadAndFoodProducts/">
-							<i class="icon ion-logo-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.instagram.com/invites/contact/?i=jkriz7hop27x&utm_content=fo29xym">
-							<i class="icon ion-logo-instagram"></i>
-						</a>
-					</li>
-				</ul>
+			<div class="col-12">
+				<a href="https://m.facebook.com/PopularBreadAndFoodProducts/" style=" color: #123c69e8; padding-right: 5px;">
+					<i class="icon ion-logo-facebook"></i>
+				</a>
+				<a href="https://www.instagram.com/invites/contact/?i=jkriz7hop27x&utm_content=fo29xym"
+					style="color: #123c69e8; padding-left: 5px;">
+					<i class="icon ion-logo-instagram"></i>
+					</a>
 			</div>
 		</div>
-		<div class="row" style="justify-content: center;">
-			<p>
-				Copyright &copy; 2020 by Popular Bread, Indore. All rights reserved;
-			</p>
+		<div class="row">
+			<div class="col-12" style="text-decoration: none; color: #123c69e8; text-align: center;">
+				<p style="font-size:10px; margin-top: 0; padding-top: 0;">Copyright &copy; 2020 by Popular Bread, Indore. All rights reserved;</p>
+			</div>
 		</div>
 	</footer>
-		
-
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>

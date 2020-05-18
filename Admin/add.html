@@ -34,39 +34,86 @@
 					<a class="nav-link" href="add.html">Admin</a>
 				</li>
 				<li class="nav-item" style="padding-left: 15px; padding-right: 15px">
+					<a class="nav-link" href="profile.html">Profile</a>
+				</li>
+				<li class="nav-item" style="padding-left: 15px; padding-right: 15px">
 					<button id="logoutBtn" class="btn btn-danger">Logout</button>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-1 col-lg-3"></div>
-			<div class="col-10 col-lg-6"
-				style="border : 2px solid gainsboro; border-radius : 5px; margin-top: 100px; padding: 50px; padding-right: 50px;">
-				<hr>
-				<h2 style="text-align: center;">Add admin</h2>
-				<hr>
-				<div class="form-group" style="margin-top: 40px">
-					<label for="exampleInputName">Name</label>
-					<input type="text" class="form-control" id="name" aria-describedby="nameHelp">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label>
-					<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword1">Password</label>
-					<input type="password" class="form-control" id="password">
-				</div>
-				<div style="text-align: center; margin-top: 50px">
-					<button id="submit" type="submit" class="btn btn-primary" style="min-width: 50%">Submit</button>
+	<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 90px;">
+		<li class="nav-item" style="width: 50%; text-align: center;">
+			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#addadmin" role="tab" aria-controls="home"
+				aria-selected="true">Add admin</a>
+		</li>
+		<li class="nav-item" style="width: 50%; text-align: center;">
+			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#updateadmin" role="tab" aria-controls="profile"
+				aria-selected="false">Modify admin</a>
+		</li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="addadmin" role="tabpanel" aria-labelledby="home-tab">
+			<!-- form to add products -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-1 col-lg-3"></div>
+					<div class="col-10 col-lg-6"
+						style="border : 2px solid gainsboro; border-radius : 5px; margin-top: 50px; padding: 50px; padding-right: 50px;">
+						<hr>
+						<h2 style="text-align: center;">Add admin</h2>
+						<hr>
+						<div class="form-group" style="margin-top: 40px">
+							<label for="exampleInputName">Name</label>
+							<input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="password"
+								placeholder="Keep minimum length 8 for passwords">
+						</div>
+						<div style="text-align: center; margin-top: 50px">
+							<button id="submit" type="submit" class="btn btn-primary" style="min-width: 50%">Submit</button>
+						</div>
+					</div>
+					<div class="col-1 col-lg-3"></div>
 				</div>
 			</div>
-			<div class="col-1 col-lg-3"></div>
+		</div>
+		<div class="tab-pane fade" id="updateadmin" role="tabpanel" aria-labelledby="profile-tab">
+			<!-- display products -->
+			<div class="container-fluid" style="margin-top: 50px;">
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-10 table-responsive">
+						<hr>
+						<h2 style="text-align: center;">Admins</h2>
+						<hr>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Serial</th>
+									<th scope="col">Name</th>
+									<th scope="col">Email</th>
+									<th scope="col">Remove</th>
+								</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="col-1 "></div>
+				</div>
+			</div>
 		</div>
 	</div>
+
 
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -103,11 +150,10 @@
 			let email = document.getElementById('email').value;
 			let password = document.getElementById('password').value;
 			let data = { name, email, password }
-			console.log(data)
-			fetch('https://popularbreadapi.herokuapp.com/admin/addadmin', {
+			fetch('https://popularbreadapi.herokuapp.com/admin/newadmin', {
 				method: "POST",
 				headers: {
-					'Authorization': 'Bearer ' + localStorage.getItem('pbtoken'),
+					'Authorization': 'Bearer ' + localStorage.getItem('pbToken'),
 					'Content-Type': 'application/json;charset=utf-8'
 				},
 				body: JSON.stringify(data)
@@ -116,21 +162,29 @@
 					return res.json();
 				})
 				.then(data => {
-					console.log(data)
-					if (data.name === undefined) {
+					if (data.code === 11000) {
 						document.getElementById('submit').innerHTML = 'Submit'
 						Swal.fire(
 							'Oopppsss..',
-							'There was some technical glitch!',
+							'The user is already an admin!',
 							'error'
 						)
 					} else {
-						document.getElementById('submit').innerHTML = 'Submit'
-						Swal.fire(
-							'Added',
-							'Product name has been added.',
-							'success'
-						)
+						if (data.name === undefined) {
+							document.getElementById('submit').innerHTML = 'Submit'
+							Swal.fire(
+								'Oopppsss..',
+								'There was some technical glitch!',
+								'error'
+							)
+						} else {
+							document.getElementById('submit').innerHTML = 'Submit'
+							Swal.fire(
+								'Added',
+								'Admin has been added.',
+								'success'
+							)
+						}
 					}
 				})
 				.catch(err => {
@@ -141,6 +195,83 @@
 					)
 				})
 		})
+
+		function getAdminsList() {
+			fetch('https://popularbreadapi.herokuapp.com/admin/alladmin', {
+				method: 'GET',
+				headers: {
+					'Authorization': 'Bearer ' + localStorage.getItem('pbToken'),
+					'Content-Type': 'application/json;charset=utf-8'
+				}
+			})
+				.then(res => {
+					return res.json();
+				})
+				.then(data => {
+					let content = "";
+					for (let i = 0; i < data.length; i++) {
+						content = content + `<tr>
+				<td scope='row' style='padding: 20px' >${i + 1}</td>
+				<td scope='row' style='padding: 20px' >${data[i].name}</td>
+				<td scope='row' style='padding: 20px' >${data[i].email}</td>
+				<td scope='row' >
+					<button style='margin: 5px' onclick='deleteAdmin(event)' class='btn btn-danger' data-id='${data[i]._id}'>Remove admin</button>
+				</td>
+			</tr>`
+					}
+					document.getElementsByTagName('tbody')[0].innerHTML = content;
+				})
+
+		}
+
+
+		function deleteAdmin(event) {
+			let id = event.target.getAttribute('data-id')
+			Swal.fire({
+				title: 'Are you sure?',
+				text: "You won't be able to revert this!",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes, remove it!'
+			}).then((result) => {
+				if (result.value) {
+					fetch(`https://popularbreadapi.herokuapp.com/admin/removeadmin/${id}`, {
+						method: 'DELETE',
+						headers: {
+							'Content-Type': 'application/json;charset=utf-8',
+							'Authorization': 'Bearer ' + localStorage.getItem('pbToken')
+						}
+					})
+						.then(res => {
+							return res.json();
+						})
+						.then(data => {
+							if (result.value) {
+								getAdminsList();
+								Swal.fire(
+									'Deleted!',
+									'The admin has been deleted.',
+									'success'
+								)
+							}
+							console.log(data)
+						})
+						.catch(err => {
+							Swal.fire(
+								'Oopppsss..',
+								'There was some internal error!',
+								'error'
+							)
+						})
+				}
+			})
+		}
+
+		window.onload = () => {
+			getAdminsList();
+		}
 	</script>
 </body>
 

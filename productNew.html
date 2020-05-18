@@ -107,6 +107,11 @@ footer p {
     color: #25d366;
 }
 
+footer{
+	display: none;
+}
+
+
 	</style>
 </head>
 
@@ -114,7 +119,7 @@ footer p {
 
 	<header>
 
-		<nav class="navbar navbar-expand-lg navbar-light" style="padding: 0 2%; margin : 0;">
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding: 0 2%; margin : 0;">
 			<div>
 			<a href="./index.html"><img src="resources/images/logo.png" style="height: 50px; width: 120px;" alt="Omnifood logo" class="logo"></a>
 			</div>
@@ -137,12 +142,15 @@ footer p {
 	</header>
 
 	<div class="container-fluid" style="padding: 50px; margin-top: 100px">
-		<div class="row">
+		<div class="row" style="margin-bottom: 50px;">
 			<div class="col-12 text-center">
 				<h1>Products</h1>
 			</div>
 		</div>
-		<div class="row" id="products-list"></div>
+		<div class="row" id="products-list" style="text-align: center;">
+
+			<img src="./resources/images/loader.gif" id="loader" style="margin: auto auto">
+		</div>
 	</div>
 
 

@@ -18,5 +18,7 @@ fetch('https://popularbreadapi.herokuapp.com/products', {
 		<div class="card-body">
 		<h5 class="card-title">${data[i].name}</h5></div></div></div>`
 	}
+	document.getElementsByTagName('footer')[0].style.display = 'block';
+	document.getElementById("loader").style.display = 'none'
 	document.getElementById("products-list").innerHTML = content;
 })

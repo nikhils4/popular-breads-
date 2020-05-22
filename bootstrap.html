@@ -10,6 +10,9 @@
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<title>Document</title>
 	<style>
+
+		/* General */
+
 		* {
 			font-family: 'Open Sans', sans-serif;
 			scroll-behavior: smooth;
@@ -30,10 +33,21 @@
 			margin-right: 50px;
 		}
 
+		.navbar-light .navbar-toggler{
+			color : black;
+			border:  none;
+		}
+
+		.navbar-light .navbar-toggler:focus{
+			outline : none;
+			border:  none;
+		}
+
+		/* Pace loader at top */
+
 		.pace {
 			-webkit-pointer-events: none;
 			pointer-events: none;
-
 			-webkit-user-select: none;
 			-moz-user-select: none;
 			user-select: none;
@@ -52,16 +66,15 @@
 			width: 100%;
 			height: 2px;
 		}
-		.navbar-toggler[aria-expanded=true]::parent{
-				background-color: white;
-		}
+
 	</style>
 </head>
 
 <body>
 
+	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
-		style=" background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px);">
+		style=" background-color: rgba(255, 255, 255, 0.45); backdrop-filter: blur(5px);">
 		<a class="navbar-brand" href="index.html"><img src="./resources/images/logo.png" style="height: 40px;"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +90,7 @@
 					<a class="nav-link" href="productNew.html">Products</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">CSR</a>
+					<a class="nav-link" href="#csr">CSR</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Our factories</a>
@@ -86,6 +99,7 @@
 		</div>
 	</nav>
 
+	<!-- Main carousel -->
 	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="margin-top: 70px; min-height: 325px;">
 		<div class="carousel-inner">
 			<div class="carousel-item active"">
@@ -109,6 +123,7 @@
 	</div >
 
 	<div id="aboutus"  class="container-fluid">
+		<!-- Heading  -->
 		<div class="row" style="text-align: center;">
 			<div class="col-2 col-lg-2"></div>
 			<div class="col-8 col-lg-8" style="padding-top: 100px;">
@@ -116,11 +131,13 @@
 			</div>
 			<div class="col-2 col-lg-2"></div>
 		</div>
+		<!-- Place for about us image -->
 		<div class="row" style="margin-top: 30px;">
 			<div class="col-1 col-lg-2"></div>
 			<div class="col-10 col-lg-4" style="border: 2px solid black">
 				// place for image
 			</div>
+			<div class="col-1 d-lg-none"></div>
 			<div class="col-10 col-lg-4">
 				<p style="text-align: justify;
 				text-align-last: left;">Since we opened our doors in 1967, we have been dedicated to the principle of maximising quality while keeping customer satisfaction our topmost priority. The first fully automatic plant of Madhya Pradesh, Popular Bread and Food Products, offer wide range of breads made entirely from scratch using finest ingredients.</p>
@@ -130,7 +147,9 @@
 		</div>
 	</div>
 
-	<div id="aboutus"  class="container-fluid">
+	<div id="csr"  class="container-fluid">
+
+		<!-- Heading -->
 		<div class="row" style="text-align: center;">
 			<div class="col-2 col-lg-2"></div>
 			<div class="col-8 col-lg-8" style="padding-top: 100px;">
@@ -138,6 +157,7 @@
 			</div>
 			<div class="col-2 col-lg-2"></div>
 		</div>
+		<!-- Content -->
 		<div class="row" style="margin-top: 30px;">
 			<div class="col-1 col-lg-2"></div>
 			<div class="col-10 col-lg-8">
@@ -147,6 +167,16 @@
 			<div class="col-1 col-lg-2"></div>
 			</div>
 		</div>
+		<!-- Small carousel -->
+		<!-- <div class="row" style="margin-top: 30px;">
+			<div class="col-1 col-lg-2"></div>
+			<div class="col-10 col-lg-8"> -->
+
+
+			<!-- </div>
+			<div class="col-1 col-lg-2"></div>
+			</div> -->
+		<!-- </div> -->
 	</div>
 
 

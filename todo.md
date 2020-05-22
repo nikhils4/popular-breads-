@@ -12,6 +12,7 @@
 6.Factory address and fssai no in footer
 7. contact us form should include- city, state, pincode
 10.whenevr someone touches the picture of breads or any product,2 lines should be displayed. also a nutritional value
+// image height fixing asked to crop
 
 
 // slider (automtic corusel) - image --> main image text baaki will be just iamge (loop)

@@ -52,6 +52,9 @@
 			width: 100%;
 			height: 2px;
 		}
+		.navbar-toggler[aria-expanded=true]::parent{
+				background-color: white;
+		}
 	</style>
 </head>
 
@@ -71,7 +74,7 @@
 					<a class="nav-link" href="#aboutus">About us</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Products</a>
+					<a class="nav-link" href="productNew.html">Products</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">CSR</a>
@@ -114,12 +117,31 @@
 			<div class="col-2 col-lg-2"></div>
 		</div>
 		<div class="row" style="margin-top: 30px;">
-			<div class="col-2 col-lg-2"></div>
-			<div class="col-8 col-lg-8">
+			<div class="col-1 col-lg-2"></div>
+			<div class="col-10 col-lg-8">
 				<p style="text-align: justify;
 				text-align-last: center;">Since we opened our doors in 1967, we have been dedicated to the principle of maximising quality while keeping customer satisfaction our topmost priority. The first fully automatic plant of Madhya Pradesh, Popular Bread and Food Products, offer wide range of breads made entirely from scratch using finest ingredients.</p>
 			</div>
+			<div class="col-1 col-lg-2"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="aboutus"  class="container-fluid">
+		<div class="row" style="text-align: center;">
 			<div class="col-2 col-lg-2"></div>
+			<div class="col-8 col-lg-8" style="padding-top: 100px;">
+				<h1>About Us</h1>
+			</div>
+			<div class="col-2 col-lg-2"></div>
+		</div>
+		<div class="row" style="margin-top: 30px;">
+			<div class="col-1 col-lg-2"></div>
+			<div class="col-10 col-lg-8">
+				<p style="text-align: justify;
+				text-align-last: center;">Since we opened our doors in 1967, we have been dedicated to the principle of maximising quality while keeping customer satisfaction our topmost priority. The first fully automatic plant of Madhya Pradesh, Popular Bread and Food Products, offer wide range of breads made entirely from scratch using finest ingredients.</p>
+			</div>
+			<div class="col-1 col-lg-2"></div>
 			</div>
 		</div>
 	</div>
@@ -140,7 +162,13 @@
 		$('.carousel').carousel({
 			interval: 2000
 		})
-	</script>
-</body>
 
+		document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', () => {
+			if(document.querySelectorAll('[aria-expanded]')[0].getAttribute('aria-expanded') === 'false'){
+				document.getElementsByTagName('nav')[0].style.backgroundColor = 'white';
+			} else {
+				document.getElementsByTagName('nav')[0].style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+			}
+		})</script>
+</body>
 </html>

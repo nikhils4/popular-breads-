@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Document</title>
+	<style>
+		* {
+			font-family: 'Open Sans', sans-serif;
+			scroll-behavior: smooth;
+		}
+		h1{
+			font-family: 'Cinzel', serif;
+			font-weight: 1000;
+		}
+		p {
+			font-size: 1.15em ;
+		}
+		.nav-item {
+			padding-left: 15px;
+			padding-right: 15px
+		}
+
+		.ml-auto:last-child {
+			margin-right: 50px;
+		}
+
+		.pace {
+			-webkit-pointer-events: none;
+			pointer-events: none;
+
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		}
+
+		.pace-inactive {
+			display: none;
+		}
+
+		.pace .pace-progress {
+			background: #000;
+			position: fixed;
+			z-index: 2000;
+			top: 0;
+			right: 100%;
+			width: 100%;
+			height: 2px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+		style=" background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px);">
+		<a class="navbar-brand" href="index.html"><img src="./resources/images/logo.png" style="height: 40px;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#aboutus">About us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">CSR</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Our factories</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" style="margin-top: 70px; min-height: 325px;">
+		<div class="carousel-inner">
+			<div class="carousel-item active"">
+				<img class="d-block w-100" src="./resources/images/special/one.jpeg" alt="First slide" style="max-height: 800px;">
+				<div class="carousel-caption d-none d-md-block" style="left: 5%; bottom: 45%; text-align: left;">
+					<h1>POPULAR MEANS BREAD</h1>
+					<h1>BREADS MEANS POPULAR</h1>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="./resources/images/special/four.jpeg" alt="Fourth slide" style="max-height: 800px;">
+			</div>
+			<div class="carousel-item ">
+				<img class="d-block w-100" src="./resources/images/special/two.jpeg" alt="Second slide" style="max-height: 800px;">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100 h-80" src="./resources/images/special/three.jpeg" alt="Third slide" style="max-height: 800px;">
+			</div>
+
+		</div>
+	</div >
+
+	<div id="aboutus"  class="container-fluid">
+		<div class="row" style="text-align: center;">
+			<div class="col-2 col-lg-2"></div>
+			<div class="col-8 col-lg-8" style="padding-top: 100px;">
+				<h1>About Us</h1>
+			</div>
+			<div class="col-2 col-lg-2"></div>
+		</div>
+		<div class="row" style="margin-top: 30px;">
+			<div class="col-2 col-lg-2"></div>
+			<div class="col-8 col-lg-8">
+				<p style="text-align: justify;
+				text-align-last: center;">Since we opened our doors in 1967, we have been dedicated to the principle of maximising quality while keeping customer satisfaction our topmost priority. The first fully automatic plant of Madhya Pradesh, Popular Bread and Food Products, offer wide range of breads made entirely from scratch using finest ingredients.</p>
+			</div>
+			<div class="col-2 col-lg-2"></div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="./resources/js/pace.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script>
+		$('.carousel').carousel({
+			interval: 2000
+		})
+	</script>
+</body>
+
+</html>
